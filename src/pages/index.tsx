@@ -2,7 +2,7 @@ import { Box, Button, Container, Grid, Typography, useMediaQuery, useTheme } fro
 
 const Home = () => {
   const theme = useTheme();
-  const { palette, breakpoints } = theme;
+  const { palette, breakpoints, transitions } = theme;
   const { lightGray, cyan, brightYellow, grayishBlue } = palette;
   const mobile = useMediaQuery(breakpoints.down("md"));
 
@@ -21,6 +21,9 @@ const Home = () => {
           borderRadius: 2,
           boxShadow: "0px 20px 20px 0px hsl(218, 22%, 85%)",
           overflow: "hidden",
+          transition: transitions.create(["max-width"], {
+            duration: transitions.duration.standard,
+          }),
         }}
         disableGutters
       >
@@ -33,10 +36,8 @@ const Home = () => {
               30-day, hassle-free money back guarantee
             </Typography>
             <Typography color={grayishBlue.main}>
-              Gain access to our full library of tutorials along with expert code reviews.
-            </Typography>
-            <Typography color={grayishBlue.main}>
-              Perfect for any developers who are serious about honing their skills.
+              Gain access to our full library of tutorials along with expert code reviews. Perfect
+              for any developers who are serious about honing their skills.
             </Typography>
           </Grid>
           <Grid item xs={6} padding={4} bgcolor={cyan.main}>
