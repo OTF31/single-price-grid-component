@@ -1,35 +1,89 @@
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Typography, useTheme } from "@mui/material";
 
 const Home = () => {
+  const theme = useTheme();
+  const { palette } = theme;
+  const { lightGray, cyan, brightYellow, grayishBlue } = palette;
+
   return (
-    <Box minHeight={"100vh"} maxWidth={"100vw"} display={"flex"} alignItems={"center"}>
-      <Container maxWidth={"md"} disableGutters sx={{ bgcolor: "skyblue" }}>
+    <Box
+      minHeight={"100vh"}
+      maxWidth={"100vw"}
+      display={"flex"}
+      alignItems={"center"}
+      sx={{ background: lightGray.main }}
+    >
+      <Container
+        maxWidth={"sm"}
+        sx={{
+          borderRadius: 2,
+          boxShadow: "0px 20px 20px 0px hsl(218, 22%, 85%)",
+          overflow: "hidden",
+        }}
+        disableGutters
+      >
         <Grid container>
-          <Grid item xs={12} bgcolor={"red"}>
-            <Typography>Join our community</Typography>
-            <Typography>30-day, hassle-free money back guarantee</Typography>
-            <Typography>
-              Gain access to our full library of tutorials along with expert code reviews. Perfect
-              for any developers who are serious about honing their skills.
+          <Grid item xs={12} padding={4} bgcolor={"white"}>
+            <Typography fontWeight={"700"} fontSize={"1.3rem"} color={cyan.main}>
+              Join our community
+            </Typography>
+            <Typography fontWeight={"700"} marginTop={2} marginBottom={1} color={brightYellow.main}>
+              30-day, hassle-free money back guarantee
+            </Typography>
+            <Typography color={grayishBlue.main}>
+              Gain access to our full library of tutorials along with expert code reviews.
+            </Typography>
+            <Typography color={grayishBlue.main}>
+              Perfect for any developers who are serious about honing their skills.
             </Typography>
           </Grid>
-          <Grid item xs={6} bgcolor={"blue"}>
-            <Typography>Monthly Subscription</Typography>
-            <Box sx={{ display: "flex", flexDirection: "row" }}>
-              <Typography>$29</Typography>&nbsp;
-              <Typography display={"inline"}>per month</Typography>
+          <Grid item xs={6} padding={4} bgcolor={cyan.main}>
+            <Typography color={"white"} fontWeight={"700"}>
+              Monthly Subscription
+            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center" }} marginTop={1}>
+              <Typography color={"white"} fontSize={"1.6rem"} fontWeight={"700"} marginRight={1}>
+                $29
+              </Typography>
+              &nbsp;
+              <Typography color={lightGray.main} fontSize={"0.8rem"}>
+                per month
+              </Typography>
             </Box>
-            <Typography>Full access for less than $1 a day</Typography>
+            <Typography
+              marginBottom={3}
+              fontSize={"0.8rem"}
+              color={lightGray.main}
+              fontWeight={"700"}
+            >
+              Full access for less than $1 a day
+            </Typography>
+            <Button
+              fullWidth
+              sx={{
+                textTransform: "capitalize",
+                color: lightGray.main,
+                fontWeight: "700",
+                background: brightYellow.main,
+                "&:hover": { background: brightYellow.dark },
+              }}
+            >
+              Sign up
+            </Button>
           </Grid>
-          <Grid item xs={6} bgcolor={"green"}>
-            <Typography>Why Us</Typography>
-            <Typography>Tutorials by industry experts</Typography>
-            <Typography>Peer &amp; expert code review</Typography>
-            <Typography>Coding exercises</Typography>
-            <Typography>Access to our GitHub repos</Typography>
-            <Typography>Community forum</Typography>
-            <Typography>Flashcard decks</Typography>
-            <Typography>New videos every week</Typography>
+          <Grid item xs={6} padding={4} bgcolor={cyan.light}>
+            <Typography marginBottom={1} color={"white"} fontWeight={"700"}>
+              Why Us
+            </Typography>
+            <Box color={"white"}>
+              <Typography fontSize={"0.8rem"}>Tutorials by industry experts</Typography>
+              <Typography fontSize={"0.8rem"}>Peer &amp; expert code review</Typography>
+              <Typography fontSize={"0.8rem"}>Coding exercises</Typography>
+              <Typography fontSize={"0.8rem"}>Access to our GitHub repos</Typography>
+              <Typography fontSize={"0.8rem"}>Community forum</Typography>
+              <Typography fontSize={"0.8rem"}>Flashcard decks</Typography>
+              <Typography fontSize={"0.8rem"}>New videos every week</Typography>
+            </Box>
           </Grid>
         </Grid>
       </Container>

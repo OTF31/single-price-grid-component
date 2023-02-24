@@ -8,8 +8,12 @@ const font = Karla({ subsets: ["latin"], weight: ["400", "700"] });
 const theme = createTheme({
   palette: {
     // Primary
-    cyan: { main: "hsl(179, 62%, 43%)" },
-    brightYellow: { main: "hsl(71, 73%, 54%)" },
+    cyan: { main: "hsl(179, 62%, 43%)", dark: "hsl(179, 62%, 33%)", light: "hsl(179, 62%, 48%)" },
+    brightYellow: {
+      main: "hsl(71, 73%, 54%)",
+      dark: "hsl(71, 73%, 44%)",
+      light: "hsl(71, 73%, 64%)",
+    },
 
     // Neutral
     lightGray: { main: "hsl(204, 43%, 93%)" },
@@ -17,6 +21,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: font.style.fontFamily,
+    // fontSize: 16,
   },
 });
 
