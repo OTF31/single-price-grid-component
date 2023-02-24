@@ -1,9 +1,10 @@
-import { Box, Button, Container, Grid, Typography, useTheme } from "@mui/material";
+import { Box, Button, Container, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 const Home = () => {
   const theme = useTheme();
-  const { palette } = theme;
+  const { palette, breakpoints } = theme;
   const { lightGray, cyan, brightYellow, grayishBlue } = palette;
+  const mobile = useMediaQuery(breakpoints.down("md"));
 
   return (
     <Box
@@ -12,9 +13,10 @@ const Home = () => {
       display={"flex"}
       alignItems={"center"}
       sx={{ background: lightGray.main }}
+      padding={1}
     >
       <Container
-        maxWidth={"sm"}
+        maxWidth={mobile ? "xs" : "sm"}
         sx={{
           borderRadius: 2,
           boxShadow: "0px 20px 20px 0px hsl(218, 22%, 85%)",
@@ -22,7 +24,7 @@ const Home = () => {
         }}
         disableGutters
       >
-        <Grid container>
+        <Grid container columns={mobile ? 6 : 12}>
           <Grid item xs={12} padding={4} bgcolor={"white"}>
             <Typography fontWeight={"700"} fontSize={"1.3rem"} color={cyan.main}>
               Join our community

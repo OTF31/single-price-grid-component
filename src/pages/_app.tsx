@@ -1,7 +1,7 @@
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import type { AppProps } from "next/app";
-import Head from "next/head";
 import { Karla } from "next/font/google";
+import Head from "next/head";
 
 const font = Karla({ subsets: ["latin"], weight: ["400", "700"] });
 
